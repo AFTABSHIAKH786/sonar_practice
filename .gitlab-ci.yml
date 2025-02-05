@@ -16,10 +16,9 @@ test_case:
   script:
     - echo "Installing the dependencies"
     - npm config set registry http://registry.npmjs.org
-    - npm install @angular-devkit/build-angular
-    - npm install @angular-devkit/cli
-    - npm install @angular-devkit/compiler-cli
-    - npm install @angular-devkit/language-service
+    - npm install @angular/build-angular
+    - npm install @angular/cli
+    - npm install @angular/compiler-cli
     - echo "Running test"
     - npm run test
 
@@ -32,9 +31,8 @@ build_project:
     - echo "Installing the dependencies"
     - npm config set registry http://registry.npmjs.org
     - npm install @angular-devkit/build-angular
-    - npm install @angular-devkit/cli
-    - npm install @angular-devkit/compiler-cli
-    - npm install @angular-devkit/language-service
+    - npm install @angular/cli
+    - npm install @angular/compiler-cli
     - echo "Building the project with default configuration"
     - npm run build
     - echo "Build created Successfully. 👍"
