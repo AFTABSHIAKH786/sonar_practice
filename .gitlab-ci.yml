@@ -21,5 +21,6 @@ build_project:
     - echo "Deleting the old dist folder"
     - rm -rf dist
     - echo "Building the project with default configuration"
+    - npm install -g @angular/cli
     - npm run build
     - echo "Build created Successfully. 👍"
