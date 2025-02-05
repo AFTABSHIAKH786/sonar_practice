@@ -3,12 +3,20 @@ image: node:14
 stages:
   - verify
   - build
+  - test
 
 check_node:
   stage: verify
   script:
     - if ! command -v node &> /dev/null; then echo "Node is not installed"; exit 1; fi
     - echo "Node is installed on the system."
+check_node:
+  stage: test
+  script:
+    - echo "Installing the dependencies"
+    - npm install
+    - echo "Running test"
+    - npm run test
 
 
 build_project:
