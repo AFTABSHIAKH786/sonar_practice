@@ -15,7 +15,10 @@ test_case:
   stage: test
   script:
     - echo "Installing the dependencies"
-    - npm install
+    - npm install @angular-devkit/build-angular@~0.13.0
+    - npm install @angular-devkit/cli@~7.3.9
+    - npm install @angular-devkit/compiler-cli@~7.2.0
+    - npm install @angular-devkit/language-service@~7.2.0
     - echo "Running test"
     - npm run test
 
@@ -26,7 +29,10 @@ build_project:
     - echo "Deleting the old dist folder"
     - rm -rf dist
     - echo "Installing the dependencies"
-    - npm install
+    - npm install @angular-devkit/build-angular@~0.13.0
+    - npm install @angular-devkit/cli@~7.3.9
+    - npm install @angular-devkit/compiler-cli@~7.2.0
+    - npm install @angular-devkit/language-service@~7.2.0
     - echo "Building the project with default configuration"
     - npm run build
     - echo "Build created Successfully. 👍"
