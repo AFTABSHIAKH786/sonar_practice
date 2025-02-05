@@ -10,7 +10,8 @@ check_node:
   script:
     - if ! command -v node &> /dev/null; then echo "Node is not installed"; exit 1; fi
     - echo "Node is installed on the system."
-check_node:
+
+test_case:
   stage: test
   script:
     - echo "Installing the dependencies"
