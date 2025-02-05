@@ -1,26 +1,23 @@
-image: node:18
+image: node:14
 
 stages:
+  - verify
   - build
 
 check_node:
-  stage: build
+  stage: verify
   script:
     - if ! command -v node &> /dev/null; then echo "Node is not installed"; exit 1; fi
     - echo "Node is installed on the system."
 
-install_dependencies:
-  stage: build
-  script:
-    - echo "Installing Dependencies"
-    - npm install
 
 build_project:
   stage: build
   script:
     - echo "Deleting the old dist folder"
     - rm -rf dist
+    - echo "Installing the dependencies"
+    - npm install
     - echo "Building the project with default configuration"
-    - npm install -g @angular/cli
-    - ng build
+    - npm run build
     - echo "Build created Successfully. 👍"
