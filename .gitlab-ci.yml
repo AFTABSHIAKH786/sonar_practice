@@ -15,6 +15,7 @@ test_case:
   stage: test
   script:
     - echo "Installing the dependencies"
+    - npm config set registry http://registry.npmjs.org
     - npm install @angular-devkit/build-angular
     - npm install @angular-devkit/cli
     - npm install @angular-devkit/compiler-cli
@@ -29,6 +30,7 @@ build_project:
     - echo "Deleting the old dist folder"
     - rm -rf dist
     - echo "Installing the dependencies"
+    - npm config set registry http://registry.npmjs.org
     - npm install @angular-devkit/build-angular
     - npm install @angular-devkit/cli
     - npm install @angular-devkit/compiler-cli
