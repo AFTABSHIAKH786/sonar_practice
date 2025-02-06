@@ -12,6 +12,10 @@ check_node() {
     fi
 }
 
+Name=Aftab
+
+echo $Name
+
 echo "Checking Node "
 check_node
 

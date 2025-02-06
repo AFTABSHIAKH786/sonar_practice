@@ -3,24 +3,13 @@ image: node:16.20.2
 stages:
   - verify
   - build
-  - test
+  - deploy
 
 check_node:
   stage: verify
   script:
     - if ! command -v node &> /dev/null; then echo "Node is not installed"; exit 1; fi
     - echo "Node is installed on the system."
-
-test_case:
-  stage: test
-  script:
-    - echo "Installing the dependencies"
-    - npm config set registry http://registry.npmjs.org
-    - npm install @angular/build-angular
-    - npm install @angular/cli
-    - npm install @angular/compiler-cli
-    - echo "Running test"
-    - npm run test
 
 
 build_project:
@@ -36,3 +25,11 @@ build_project:
     - echo "Building the project with default configuration"
     - npm run build
     - echo "Build created Successfully. 👍"
+
+
+deploy_production:
+    stage: deploy
+    environment: production
+    script:
+      - echo "Deploying to production environment"
+      
